@@ -1,0 +1,36 @@
+<html>
+    <head>
+    <link rel=stylesheet type=text/css href="static/styles.css">
+    <meta charset="utf-8">
+    <meta key="BBA1A8E886BB0F9D">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext" rel="stylesheet">
+    <title>Markdown Syndrome</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <style type="text/css">
+    </style>
+    </head>
+
+    <body>
+        <div class="main">
+            <h2>write markdown here</h2>
+            <form id="myform" method="post">
+            <textarea name="md" class="inputmd" placeholder="# Markdown Syndrome
+this is the dumbest python based markdown processor, written by _z-bata_ (WIP)
+current functionality:
+__bold__ (or **bold**)
+_italics_ (or *italics*)
+~~strikethrough~~
+###### 6 levels of headings
+``` code ```
+> quotes
+paragraphs">{{md}}</textarea>
+            <a class="btn"  onclick="document.getElementById('myform').submit();">convert</a>
+            </form>
+            <textarea class="ee">{{s | safe}}</textarea>
+        </div>
+        <div class="result">
+            <br />
+        <code>browser-processed:</code>
+        <p>{{z | safe}}</p>
+        </div>
+    </body>
