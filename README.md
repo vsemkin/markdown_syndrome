@@ -11,6 +11,7 @@ how original.
 1. input from __textarea__
 2. processing in ``app.py``
 3. output to __p__
+4. html convertation to __textarea__
 
 #### features in plans:
 1. input from ``input.md``
