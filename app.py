@@ -1,14 +1,5 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
-def replace_n(string, n, first=0):
-    letters = (
-        # i % n == 0 means this letter should be replaced
-        "*" if i % n == 0 else char
-
-        # iterate index/value pairs
-        for i, char in enumerate(string, -first)
-    )
-    return ''.join(letters)
 
 from random import choice
 from flask import *
@@ -32,6 +23,19 @@ def all_users():
     for i in range(len(lines)):
         if (lines[i] == ''):
             break
+        
+        counter = 0
+        for j in range(len(lines[i])):
+            if (lines[i][j] == '*'):
+                counter += 1
+        
+        nopar = False
+        if (counter == 1):
+            lines[i] = lines[i].replace('*','<li>', 1)
+            s +=lines[i] + '</li>' + '\n'
+            nopar = True
+        
+        
         ## bold
         while (lines[i].find('__') != -1) or (lines[i].find('**') != -1):
             lines[i] = lines[i].replace('__', '<b>', 1)   
@@ -78,9 +82,13 @@ def all_users():
             s += '<h1>'+lines[i][1:]+'</h1>' + '\n'
         ##blockquates
         elif (lines[i][0] == '>'):
-            s += '<blockquote>'+lines[i][1:]+ '</blockquote>'
-     
-        else:
+            s += '<blockquote>'+lines[i][1:]+'</blockquote>'+'\n'
+        ##unordered lists
+        elif (lines[i][0] == '+'):
+            s += '<li>'+lines[i][1:]+'</li>'+'\n'
+        elif (lines[i][0] == '-'):
+            s += '<li>'+lines[i][1:]+'</li>'+'\n'
+        elif (nopar == False):
             s += '<p>'+lines[i]+'</p>' + '\n'
             
     return render_template('index.html', s=s, md=md, z=s)      
