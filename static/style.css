@@ -1,0 +1,33 @@
+body { 
+    font-family: 'Ubuntu', sans-serif;
+    padding: 15px;
+    }
+    
+.btn { cursor: pointer; }
+
+#myform {
+    height: 80%;
+    width: 50%;
+    display: inline-block;
+    z-index: 10;
+    }
+    
+.inputmd {
+    display: inline-block;
+    height: 100%;
+    width: 70%;
+    z-index: 10;
+}
+    
+
+.ee {
+    display: inline-block;
+    position: absolute;
+    z-index: 80;
+    width: 36%;
+    height: 75%;
+}
+
+.result {
+    text-align: center;
+}
