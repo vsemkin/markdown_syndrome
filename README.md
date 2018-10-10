@@ -15,5 +15,5 @@ how original.
 
 #### features in plans:
 1. input from ``input.md``
-2. output to ``output.htm`
+2. output to ``output.htm``
 3. syntax highliting with ``highlight.js``
